@@ -21,5 +21,6 @@ function HideFileExtensions()
     Set-ItemProperty . HideFileExt "1"
     Pop-Location
 }
-Run wget without forcing through first run of edge/explorer
+
+###Run wget without forcing through first run of edge/explorer
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
