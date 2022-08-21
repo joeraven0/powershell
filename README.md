@@ -32,3 +32,5 @@ Expand-Archive -Path C:\temp\BGInfo.zip -DestinationPath C:\temp\BGInfo
 
 
 New-SmbShare -Name "testshare" -Path "C:\share\test" -FullAccess "Administrator", "Users"
+
+https://community.spiceworks.com/topic/1680417-powershell-script-windows-10-apps-removal
