@@ -23,8 +23,11 @@ function HideFileExtensions()
 }
 
 ###Run wget without forcing through first run of edge/explorer
+
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2
+
 Invoke-WebRequest -Uri "https://download.sysinternals.com/files/BGInfo.zip" -OutFile "C:\temp\BGInfo.zip"
+
 Expand-Archive -Path C:\temp\BGInfo.zip -DestinationPath C:\temp\BGInfo
 
 
