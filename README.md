@@ -30,6 +30,7 @@ Invoke-WebRequest -Uri "https://download.sysinternals.com/files/BGInfo.zip" -Out
 
 Expand-Archive -Path C:\temp\BGInfo.zip -DestinationPath C:\temp\BGInfo
 
+Invoke-WebRequest -Uri "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=en-US" -OutFile "C:\temp\firefox.exe"
 
 New-SmbShare -Name "testshare" -Path "C:\share\test" -FullAccess "Administrator", "Users"
 
