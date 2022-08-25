@@ -19,10 +19,18 @@ function setup_settings{
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name SearchBoxTaskbarMode -Value 0 -Type DWord
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowCortanaButton -Value 0 -Type DWord -Force
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowTaskViewButton -Value 0 -Type DWord -Force
-    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name HideFileExt -Value 0 -Type DWord
-    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds -Name ShellFeedsTaskbarViewMode -Value 2 -Type Dword
-    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name StoreAppsOnTaskbar -Value 0 -Type DWord
-    Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name EnableFirstLogonAnimation -Value 0 -Type DWord
+    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name HideFileExt -Value 0 -Type DWord -Force
+    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Feeds -Name ShellFeedsTaskbarViewMode -Value 2 -Type DWORD -Force
+    New-Item "HKLM:\Software\Policies\Microsoft\Windows\Windows Feeds"
+    Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\Windows Feeds" -Name EnableFeeds -Value 0 -Type DWORD -Force
+    Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name StoreAppsOnTaskbar -Value 0 -Type DWord -Force
+    Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name EnableFirstLogonAnimation -Value 0 -Type DWord -Force
+}
+function uninstall_applications{
+    #$application = Get-WmiObject -Class Win32_Product -Filter "Name = 'Windows PC Health Check'"
+    #$application.Uninstall()
+    #ps onedrive | Stop-Process -Force
+    start-process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
 }
 function debloat_store{
     #(Get-AppxPackage -Name * -AllUsers).Name
@@ -60,6 +68,7 @@ $apps=@(
     "Disney.37853FC22B2CE"
     "Microsoft.Windows.SecHealthUi"
 )
+#uninstall_applications
 setup_settings
 #debloat_store
 #download_applications
