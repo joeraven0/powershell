@@ -43,32 +43,35 @@ function debloat_store{
     }
 }
 $apps=@(
-    "Microsoft.NarratorQuickStart"
-    "Microsoft.XboxGameCallableUI"
-    "Microsoft.BingWeather"
-    "Microsoft.Microsoft3dViewer"
-    "Microsoft.MicrosoftOfficeHub"
-    "Microsoft.MicrosoftSolitaireCollection"
-    "Microsoft.Office.OneNote"
-    "Microsoft.People"
-    "Microsoft.SkypeApp"
-    "Microsoft.WindowsAlarms"
-    "Microsoft.WindowsFeedbackHub"
-    "Microsoft.MAps"
-    "Microsoft.Xbox.TCUI"
-    "Microsoft.XboxApp"
-    "Microsoft.XboxGameOverlay"
-    "Microsoft.XboxGamingOverlay"
-    "Microsoft.XboxIdentityProvider"
-    "Microsoft.XboxSpeechToTextOverlay"
-    "Microsoft.YourPhone"
-    "Microsoft.ZuneMusic"
-    "Microsoft.ZuneVideo"
-    "SpotifyAB.SpotifyMusic"
-    "Disney.37853FC22B2CE"
-    "Microsoft.Windows.SecHealthUi"
+    #"Microsoft.GetHelp"
+    #"Microsoft.GetStarted"
+
+    #"Microsoft.NarratorQuickStart"
+    #"Microsoft.XboxGameCallableUI"
+    #"Microsoft.BingWeather"
+    #"Microsoft.Microsoft3dViewer"
+    #"Microsoft.MicrosoftOfficeHub"
+    #"Microsoft.MicrosoftSolitaireCollection"
+    #"Microsoft.Office.OneNote"
+    #"Microsoft.People"
+    #"Microsoft.SkypeApp"
+    #"Microsoft.WindowsAlarms"
+    #"Microsoft.WindowsFeedbackHub"
+    #"Microsoft.Maps"
+    #"Microsoft.Xbox.TCUI"
+    #"Microsoft.XboxApp"
+    #"Microsoft.XboxGameOverlay"
+    #"Microsoft.XboxGamingOverlay"
+    #"Microsoft.XboxIdentityProvider"
+    #"Microsoft.XboxSpeechToTextOverlay"
+    #"Microsoft.YourPhone"
+    #"Microsoft.ZuneMusic"
+    #"Microsoft.ZuneVideo"
+    #"SpotifyAB.SpotifyMusic"
+    #"Disney.37853FC22B2CE"
+    #"Microsoft.Windows.SecHealthUi"
 )
 #uninstall_applications
-setup_settings
-#debloat_store
+#setup_settings
+debloat_store
 #download_applications
