@@ -1,6 +1,7 @@
 #Execution policy bypass
 #PowerShell.exe -ExecutionPolicy Bypass -File "THISFILE.ps1"
 #powershell.exe -noprofile -ExecutionPolicy Bypass -File THISFILE.ps1
+#More stuff at https://community.spiceworks.com/topic/1680417-powershell-script-windows-10-apps-removal
 
 #TODO
 
